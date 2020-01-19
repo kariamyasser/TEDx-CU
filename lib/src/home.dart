@@ -12,42 +12,44 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-
-     
       appBar: AppBar(
         title: Text('TEDx CU',
-        
-        textAlign: TextAlign.center, style: TextStyle(color: Color(0xffb71c1c))),
-        
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Color(0xffb71c1c))),
+
         backgroundColor: Colors.black,
         automaticallyImplyLeading: false,
         iconTheme: IconThemeData(color: Colors.white),
 
-           leading: new IconButton(
-                icon: new Icon(Icons.apps),
-                color: Colors.white,
-                
-                onPressed: () => _scaffoldKey.currentState.openDrawer()),
-                //Scaffold.of(context).openDrawer()
+        leading: new IconButton(
+            icon: new Icon(Icons.apps),
+            color: Colors.white,
+            onPressed: () => _scaffoldKey.currentState.openDrawer()),
+        //Scaffold.of(context).openDrawer()
       ),
-      
-         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pop(context);
-
-          },
-         ),
-        body: Center(child:   Image.asset(
-                   
-                      'assets/sc5.png',
-                      width: 50,
-                      height: 50,
-                      fit: BoxFit.cover,
-                    )),
-
-        drawer: DarkDrawer(),
-                );
-          }
-        
-          
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/bk.jpg',
+            ),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+            child: Image.asset(
+          'assets/sc5.png',
+          width: 50,
+          height: 50,
+          fit: BoxFit.cover,
+        )),
+      ),
+      drawer: DarkDrawer(),
+    );
+  }
 }

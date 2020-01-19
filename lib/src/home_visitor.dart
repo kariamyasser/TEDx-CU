@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import './member_auth.dart';
 import '../miscellaneous/bottom_navigation.dart';
 import 'dart:async';
 
@@ -22,24 +22,14 @@ class _HomeVisitor extends State<HomeVisitor> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       appBar: AppBar(
         title: Text('TEDx CU',
-        textAlign: TextAlign.center, style: TextStyle(color:Color(0xffb71c1c))),
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Color(0xffb71c1c))),
         backgroundColor: Colors.black,
         automaticallyImplyLeading: false,
         iconTheme: IconThemeData(color: Colors.white),
-         
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/home');
-        },
-      ),
-
-
-
-
       body: PageView(
         physics: NeverScrollableScrollPhysics(),
         onPageChanged: (index) {
@@ -47,14 +37,49 @@ class _HomeVisitor extends State<HomeVisitor> {
         },
         controller: pageController,
         children: <Widget>[
-          Center(
-            child: Text('Events'),
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  'assets/bk.jpg',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Center(
+              child: Text(
+                'Events',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
           ),
-          Center(
-            child: Text('About'),
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  'assets/bk.jpg',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Center(
+                child: Text(
+              'About',
+              style: TextStyle(color: Colors.white),
+            )),
           ),
-          Center(
-            child: Text('Member?'),
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  'assets/bk.jpg',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Center(
+              child: AuthThreePage(),
+            ),
           ),
         ],
       ),
@@ -82,47 +107,3 @@ class _HomeVisitor extends State<HomeVisitor> {
     );
   }
 }
-
-/*
-class xHomeVisitor extends StatelessWidget {
-  final String title;
-
-
-  xHomeVisitor({Key key, this.title}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-
-     
-      appBar: AppBar(
-        title: Text('TEDx CU', textAlign: TextAlign.center ,style: TextStyle(color: Color(0xffb71c1c))),
-        backgroundColor: Colors.black,
-        automaticallyImplyLeading: false,
-        iconTheme: IconThemeData(color: Colors.white),
-
-      ),
-      
-         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/login');
-
-          },
-         ),
-        body: Center(child:   Image.asset(
-                   
-                      'assets/sc5.png',
-                      width: 50,
-                      height: 50,
-                    
-                      //  color: Colors.white,
-                      fit: BoxFit.cover,
-                    )),
-
-        drawer: DarkDrawer(),
-                );
-          }
-        
-          
-}
-*/

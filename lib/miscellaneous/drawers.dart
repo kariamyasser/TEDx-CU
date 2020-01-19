@@ -30,7 +30,7 @@ class DarkDrawer extends StatelessWidget {
   static final String path = "lib/drawers.dart";
       final String image = '';
 
-  final Color primary = Color(0xffb71c1c);
+  final Color primary =Colors.black;// Color(0xffb71c1c);
   final Color active = Color(0xffffffff);
 
   @override
@@ -41,7 +41,7 @@ class DarkDrawer extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.only(left: 16.0, right: 40),
           decoration: BoxDecoration(
-              color: primary, boxShadow: [BoxShadow(color: Colors.black45)]),
+              color: primary, boxShadow: [BoxShadow(color: Colors.black87)]),
           width: 300,
           child: SafeArea(
             child: SingleChildScrollView(
@@ -52,7 +52,7 @@ class DarkDrawer extends StatelessWidget {
                     child: IconButton(
                       icon: Icon(
                         Icons.power_settings_new,
-                        color: Colors.black,
+                        color: Colors.white,
                       ),
                       onPressed: () {},
                     ),
@@ -66,6 +66,7 @@ class DarkDrawer extends StatelessWidget {
                             colors: [Colors.white, Colors.black])),
                     child: CircleAvatar(
                       radius: 40,
+                      backgroundColor: Color(0xffb71c1c),
                       //backgroundImage: CachedNetworkImageProvider(image),
                     ),
                   ),
@@ -76,7 +77,7 @@ class DarkDrawer extends StatelessWidget {
                   ),
                   Text(
                     "@kariam_yasser",
-                    style: TextStyle(color: active, fontSize: 16.0),
+                    style: TextStyle(color: Color(0xffb71c1c), fontSize: 16.0),
                   ),
                   SizedBox(height: 30.0),
                   _buildRow(Icons.home, "Home"),
@@ -111,7 +112,7 @@ class DarkDrawer extends StatelessWidget {
       child: Row(children: [
         Icon(
           icon,
-          color: Colors.black,
+          color: Color(0xffb71c1c),
         ),
         SizedBox(width: 10.0),
         Text(
